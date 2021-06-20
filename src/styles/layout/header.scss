@@ -1,0 +1,27 @@
+.header {
+  height: auto;
+  display: flex;
+  border-bottom: 1px solid $secondary;
+
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+  .auth-container {
+    width: 100%;
+    text-align: right;
+  }
+  .buttons-auth-container {
+    .buttonsAuth {
+      width: auto;
+      margin: $basic-margin;
+      min-width: 5rem;
+      padding: 10px;
+      background-color: $secondary;
+      border: 1px solid $secondary;
+      border-radius: 2px;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}

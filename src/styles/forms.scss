@@ -1,0 +1,30 @@
+.basicFormItem {
+  margin: 2rem;
+  color: $secondary;
+  input {
+    height: 1rem;
+    color: $secondary;
+    border: none;
+    border-bottom: 1px solid $primary !important;
+    margin-right: $basic-margin;
+    margin-bottom: $basic-margin;
+  }
+
+  .ant-form-item-explain-error {
+    color: $red;
+  }
+}
+
+.formButton {
+  margin: $basic-margin;
+  text-align: center;
+  .button {
+    width: auto;
+    padding: 10px;
+    background-color: $secondary;
+    border: 1px solid $secondary;
+    border-radius: 2px;
+    color: $white;
+    cursor: pointer;
+  }
+}
