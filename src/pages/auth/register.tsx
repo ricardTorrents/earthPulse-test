@@ -1,12 +1,12 @@
+import { Button, Col, Form, Input, Row } from 'antd';
 import { NextPage } from 'next';
-import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { IRootReducers } from '../../reducers';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { register, setAuthError } from '../../actions/dataActions';
-import { connect } from 'react-redux';
-import { Button, Checkbox, Col, Form, Input, Row } from 'antd';
+import { IRootReducers } from '../../reducers';
 interface OwnProps {
   children?: any;
 }
@@ -38,7 +38,7 @@ const Register: NextPage<Props> = ({
   };
 
   useEffect((): any => {
-    return setAuthError(null);
+    setAuthError(null);
   }, []);
 
   return (

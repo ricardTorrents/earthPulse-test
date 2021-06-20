@@ -1,12 +1,12 @@
+import { Button, Col, Form, Input, Row } from 'antd';
 import { NextPage } from 'next';
-import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { IRootReducers } from '../../reducers';
+import React from 'react';
+import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { login } from '../../actions/dataActions';
-import { connect } from 'react-redux';
-import { Button, Checkbox, Col, Form, Input, Row } from 'antd';
+import { IRootReducers } from '../../reducers';
 interface OwnProps {
   children?: any;
 }
@@ -66,7 +66,7 @@ const Login: NextPage<Props> = ({ user, login }): JSX.Element => {
           </Form.Item>
         </Form>
         <Row className='auth-bottom-message'>
-          <div>You don't have an account </div>
+          <div>{`You don't have an account `}</div>
           <div className='link'>
             <Link href='/posts/first-post'>Register here!</Link>
           </div>

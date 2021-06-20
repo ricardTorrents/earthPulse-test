@@ -1,12 +1,11 @@
-import { MapContainer, Marker, Popup, TileLayer, Circle } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { IUserPositions } from '../models';
-import { AnyAction, bindActionCreators, Dispatch } from 'redux';
-import { IRootReducers } from '../reducers';
-import { connect } from 'react-redux';
-import { fetchUserPositions } from '../actions/dataActions';
-import { useEffect, useState } from 'react';
 import { NextPage } from 'next';
+import { useEffect } from 'react';
+import { Circle, MapContainer, Popup, TileLayer } from 'react-leaflet';
+import { connect } from 'react-redux';
+import { AnyAction, bindActionCreators, Dispatch } from 'redux';
+import { fetchUserPositions } from '../actions/dataActions';
+import { IRootReducers } from '../reducers';
 
 interface OwnProps {
   children?: any;
@@ -21,13 +20,6 @@ const Map: NextPage<Props> = ({
   usersPositions,
   user,
 }): JSX.Element => {
-  const [otherUsers, setOtherUsers] = useState<IUserPositions[]>(null);
-
-  useEffect(() => {
-    let users = usersPositions;
-    console.log('users', usersPositions);
-    setOtherUsers(users);
-  }, [usersPositions]);
   useEffect(() => {
     fetchUserPositions();
   }, []);

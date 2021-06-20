@@ -1,4 +1,6 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
+import React from 'react';
 import Page from '../components/layout/Page';
 interface OwnProps {
   children?: any;
@@ -37,10 +39,9 @@ const Home: NextPage<Props> = (): JSX.Element => {
               <h2>Step 3</h2>
               <p>
                 Go to the{' '}
-                <a className='link' href='/dashboard'>
-                  {' '}
-                  dashboard!
-                </a>
+                <span className='link'>
+                  <Link href='/dashboard'>dashboard!</Link>
+                </span>
               </p>
             </div>
             <div className='card'>

@@ -1,6 +1,7 @@
 import { Col, Row } from 'antd';
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
@@ -30,9 +31,9 @@ const HomePage: NextPage<Props> = ({ user }): JSX.Element => {
           <Col className='card'>
             <h2>
               This page is only for registered users, go to the{' '}
-              <a className='link' href='/'>
-                land page
-              </a>
+              <span className='link'>
+                <Link href='/'> land page</Link>
+              </span>
             </h2>
           </Col>
         </Row>
